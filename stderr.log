@@ -1,0 +1,55 @@
+DOWNLOAD TRACES
+============================================================
+Building
+============================================================
+RUNNING
+============================================================
+./ChampSim/Berti/bin/./ChampSim/Berti/bin/hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no
+./ChampSim/Berti/bin/./ChampSim/Berti/bin/hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no
+./ChampSim/Berti/bin/./ChampSim/Berti/bin/hashed_perceptron-no-no-bo-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no
+./ChampSim/Berti/bin/./ChampSim/Berti/bin/hashed_perceptron-no-vberti-no-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no
+./ChampSim/Other_PF/bin/./ChampSim/Other_PF/bin/hashed_perceptron-no-ipcp_isca2020-no-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no
+GCC: (GNU) 7.5.0
+./ChampSim/Other_PF/bin/./ChampSim/Other_PF/bin/hashed_perceptron-no-ip_stride-no-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no
+GCC: (GNU) 7.5.0
+./ChampSim/Other_PF/bin/./ChampSim/Other_PF/bin/hashed_perceptron-no-mlop_dpc3-no-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no
+GCC: (GNU) 7.5.0
+./ChampSim/Other_PF/bin/./ChampSim/Other_PF/bin/hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no
+GCC: (GNU) 7.5.0
+./ChampSim/Other_PF/bin/./ChampSim/Other_PF/bin/hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no
+GCC: (GNU) 7.5.0
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti_concurso-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:709: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti22-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+hashed_perceptron-no-no-berti-no-no-no-no-lru-lru-lru-srrip-drrip-lru-lru-lru-1core-no: prefetcher/l2c_prefetcher.cc:710: uint32_t CACHE::l2c_prefetcher_operate(uint64_t, uint64_t, uint8_t, uint8_t, uint32_t, uint8_t): Assertion `pf_page_addr == page_addr' failed.
+Results
+============================================================

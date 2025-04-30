@@ -36,7 +36,7 @@ fi
 
 # Configure as local installation
 mkdir bin
-./configure --prefix=$(pwd)/bin --enable-languages=all --disable-multilib
+./configure --prefix=$(pwd)/bin --enable-languages=all --disable-multilib --disable-libsanitizer
 if [ $? -ne 0 ]; then
     echo " ${RED}ERROR${NC}"
     exit

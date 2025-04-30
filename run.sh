@@ -12,7 +12,7 @@
 ################################################################################
 VERBOSE=""
 PARALLEL=""
-GCC="N"
+GCC="Y"
 NUM_THREAD="1"
 DOCKER="N"
 REMOVE_ALL="N"
@@ -30,7 +30,7 @@ CONTAINER="docker"
 DIR=$(pwd)
 BERTI="./ChampSim/Berti"
 PF="./ChampSim/Other_PF"
-TRACES_SPEC="traces/spec2k17"
+TRACES_SPEC="/scratch/cluster/akanksha/SPEC17_dpc3" #"traces/spec2k17"
 TRACES_GAP="traces/gap"
 TRACES_CS="traces/cs"
 OUT_BASE="output"
@@ -71,20 +71,39 @@ run_command ()
     echo " ${GREEN}done${NC}"
 }
 
-file_trace () 
+file_trace ()
 {
-    # Generate temporal files to run simulations in parallel
-    for i in $2/*;
-    do
-        trace=$(echo $i | rev | cut -d'/' -f1 | rev)
-        if [[ "$LOGGED" == "Y" ]]; then
-            echo -n "$1 -warmup_instructions 50000000 -simulation_instructions"
-            echo " 200000000 -traces $i > $OUT/$3---$trace 2>>$LOG"
-        else
-            echo -n "$1 -warmup_instructions 50000000 -simulation_instructions"
-            echo " 200000000 -traces $i > $OUT/$3---$trace 2>/dev/null"
-        fi
-    done
+  # Generate temporal files to run simulations in parallel FOR SPECIFIC TRACES
+  local exec="$1"
+  local trace_dir="$2"
+  local pf_name="$3"
+
+  local specific_traces=(
+    "602.gcc_s-1850B.champsimtrace.xz"
+    "605.mcf_s-782B.champsimtrace.xz"
+    "602.gcc_s-2226B.champsimtrace.xz"
+    "607.cactuBSSN_s-2421B.champsimtrace.xz"
+    "603.bwaves_s-1740B.champsimtrace.xz"
+    "607.cactuBSSN_s-4004B.champsimtrace.xz"
+    "603.bwaves_s-2931B.champsimtrace.xz"
+    "623.xalancbmk_s-165B.champsimtrace.xz"
+    "605.mcf_s-1152B.champsimtrace.xz"
+    "623.xalancbmk_s-202B.champsimtrace.xz"
+    "605.mcf_s-1554B.champsimtrace.xz"
+  )
+
+  for trace_file in "${specific_traces[@]}"; do
+    local full_trace_path="$trace_dir/$trace_file"
+    if [[ -f "$full_trace_path" ]]; then
+      if [[ "$LOGGED" == "Y" ]]; then
+        echo -n "$exec -warmup_instructions 50000000 -simulation_instructions"
+        echo " 200000000 -traces \"$full_trace_path\" > $OUT/$pf_name---$trace_file 2>>$LOG"
+      else
+        echo -n "$exec -warmup_instructions 50000000 -simulation_instructions"
+        echo " 200000000 -traces \"$full_trace_path\" > $OUT/$pf_name---$trace_file 2>/dev/null"
+      fi
+    fi
+  done
 }
 
 file_4core_trace () 
@@ -231,15 +250,15 @@ echo ""
 
 # Build GCC 7.5.0 from scratch
 if [[ "$GCC" == "Y" ]]; then
-    echo -n "Building GCC 7.5 from scratch..."
+  #y  echo -n "Building GCC 7.5 from scratch..."
 
-    if [[ "$VERBOSE" == "Y" ]]; then
-        ./compile_gcc.sh $PARALLEL $NUM_THREAD
-    elif [[ "$LOGGED" == "Y" ]]; then
-        ./compile_gcc.sh $PARALLEL $NUM_THREAD >> $LOG 2>&1
-    else
-        ./compile_gcc.sh $PARALLEL $NUM_THREAD >/dev/null 2>&1
-    fi
+   # if [[ "$VERBOSE" == "Y" ]]; then
+    #    ./compile_gcc.sh $PARALLEL $NUM_THREAD
+   # elif [[ "$LOGGED" == "Y" ]]; then
+    #    ./compile_gcc.sh $PARALLEL $NUM_THREAD >> $LOG 2>&1
+   # else
+    #    ./compile_gcc.sh $PARALLEL $NUM_THREAD >/dev/null 2>&1
+   #fi
 
     echo " ${GREEN}done${NC}"
     CCX=$(pwd)/gcc7.5/gcc-7.5.0/bin/bin/g++
@@ -268,14 +287,15 @@ if [[ "$BUILD" == "Y" ]]; then
         echo "============================================================" >> $LOG
     fi
 
-    echo -n "Building Berti..."
-    cd $BERTI
-    run_compile "./build_champsim.sh hashed_perceptron no vberti no no no no no\
-            lru lru lru srrip drrip lru lru lru 1 no"
-    cd $DIR
+#    echo -n "Building Berti..."
+     cd $BERTI
+  #  run_compile "./build_champsim.sh hashed_perceptron no vberti no no no no no\
+   #         lru lru lru srrip drrip lru lru lru 1 no"
+   # cd $DIR
     
     # Build MLOP, IPCP and IP Stride
-    cd $PF
+  : <<'END_COMMENT'
+  cd $PF
     echo -n "Building MLOP..."
     run_compile "./build_champsim.sh hashed_perceptron no mlop_dpc3 no no no no no\
             lru lru lru srrip drrip lru lru lru 1 no"
@@ -287,8 +307,34 @@ if [[ "$BUILD" == "Y" ]]; then
     echo -n "Building IP Stride..."
     run_compile "./build_champsim.sh hashed_perceptron no ip_stride no no no no no\
             lru lru lru srrip drrip lru lru lru 1 no"
+END_COMMENT
+   # i# Build MLOP, IPCP and IP Stride
+  #  cd $PF
+  #'  echo -n "Building MLOP..."
+ #  ''' run_compile "./build_champsim.sh hashed_perceptron no mlop_dpc3 no no no no no\
+  #          lru lru lru srrip drrip lru lru lru 1 no"
+    
+   # echo -n "Building IPCP..."
+   # run_compile "./build_champsim.sh hashed_perceptron no ipcp_isca2020 no no no no\
+    #        no lru lru lru srrip drrip lru lru lru 1 no"
+    
+   # echo -n "Building IP Stride..."
+   # run_compile "./build_champsim.sh hashed_perceptron no ip_stride no no no no no\
+       #     lru lru lru srrip drrip lru lru lru 1 no"
+      #  no no no no\            lru lru lru srrip drrip lru lru lru 1 no
+#'''
+    # --- ADD YOUR NEW BLOCK HERE ---
+    echo -n "Building Berti_L2C..." 
+        run_compile "./build_champsim.sh hashed_perceptron no no bo no no no no lru lru lru srrip drrip lru lru lru 1 no"
+	run_compile "./build_champsim.sh hashed_perceptron no no berti no no no no lru lru lru srrip drrip lru lru lru 1 no"
+  #  echo -n "Building BO_L2C..."  # Descriptive name for this build configuration
+    # Configuration uses bo_percore.l2c_pref for L2C, no L1D/LLC prefetchers (similar to Berti_L2C block)
+   # run_compile "./build_champsim.sh hashed_perceptron no no bo_percore no no no no lru lru lru srrip drrip lru lru lru 1 no"
+    #                                             ^ L1D=no ^ L2C=bo_percore.l2c_pref ^ LLC=no                              ^ Cores=1
+    # --- END OF ADDED BLOCK ---
 
     if [[ "$FULL" == "Y" ]]; then
+        # ... rest of the full build section ...f [[ "$FULL" == "Y" ]]; then
         echo -n "Building No Prefetcher..."
         run_compile "./build_champsim.sh hashed_perceptron no no\
                 no no no no no lru lru lru srrip drrip lru lru lru 1 no"
@@ -443,6 +489,7 @@ fi
 echo " ${GREEN}done${NC}"
 
 echo -n "Running..."
+cat gcc --version
 cat tmp_par.out | xargs -I CMD -P $NUM_THREAD bash -c CMD
 echo " ${GREEN}done${NC}"
 

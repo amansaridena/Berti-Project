@@ -1,0 +1,36 @@
+#include "bo_percore.h" 
+
+#define DEGREE 2
+
+void CACHE::l2c_prefetcher_initialize() {
+    cout << "CPU " << cpu << " L2C BO prefetcher" << endl;
+	bo_l2c_prefetcher_initialize();
+}
+
+void CACHE::l2c_prefetcher_operate(uint64_t addr, uint64_t ip, uint8_t cache_hit, uint8_t type) {
+
+    uint64_t bo_trigger_addr = 0;
+    uint64_t bo_target_offset = 0;
+    uint64_t bo_target_addr = 0;
+    bo_l2c_prefetcher_operate(addr, ip, cache_hit, type, this, &bo_trigger_addr, &bo_target_offset, 0);
+
+    if (bo_trigger_addr && bo_target_offset) {
+
+        for(unsigned int i=1; i<=DEGREE; i++) {
+            bo_target_addr = bo_trigger_addr + (i*bo_target_offset); 
+            bo_issue_prefetcher(this, ip, bo_trigger_addr, bo_target_addr, FILL_LLC);
+        }
+    }
+}
+
+void CACHE::l2c_prefetcher_cache_fill(uint64_t addr, uint32_t set, uint32_t way, uint8_t prefetch, uint64_t evicted_addr) {
+	bo_l2c_prefetcher_cache_fill(addr, set, way, prefetch, evicted_addr, this, 0);
+}
+
+void CACHE::l2c_prefetcher_final_stats() {
+	bo_l2c_prefetcher_final_stats();
+}
+
+void CACHE::inform_tlb_eviction(uint64_t insert_page_addr, uint64_t evict_page_addr)
+{
+}
